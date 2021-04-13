@@ -1,0 +1,88 @@
+*{box-sizing:border-box;}
+
+html {
+    background-color: lightblue;
+}
+
+body{margin:70px;}
+a{text-decoration:none}
+a:link, a:visited, a:active {color:inherit};
+.introduce{
+    display:flex;
+    justify-content:center;
+}
+header{
+    padding:15px;
+    background-color:aliceblue;
+    text-align: center;
+}
+footer{
+    flex-shrink:0;
+    margin-top:0;
+}
+nav {
+    display:flex;
+    justify-content:space-around;
+    background-color:rgb(222, 228, 230);
+    align-items:center;
+    height: 42px;
+}
+nav a:hover{
+    color:black;
+    background-color:white;
+}
+.mypic{
+    display:flex;
+    justify-content:center;
+    background-color:rgb(235, 240, 240);
+    margin-bottom:0;
+    margin-top:0;
+    border-radius:50%;
+}
+.container{ 
+    display:flex;
+    justify-content:space-around;
+    background-color:rgb(222, 228, 230);
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size:x-large;
+}
+.image{
+    display:flex;
+    justify-content:space-around;
+   
+}
+.article{
+    display:flex;
+    justify-content:space-around;
+    background-color:aliceblue;
+    border-radius: 20px;
+
+}
+.buckettitle{
+    background-color:rgb(222, 228, 230);
+    display:flex;
+    justify-content:center;
+    padding:15px;
+    margin-bottom:0;
+    margin-top:200px;
+}
+.bucketlist{
+    background-color:aliceblue;
+    margin-top:0;
+}
+#sportslover{
+    color:red;
+}
+#travelover{
+    color:orange;
+}
+#musiclover{
+    color:rgb(219, 219, 11);
+}
+#introduce{
+    flex-direction:column;
+    align-items:center;
+}
+p {
+    text-align: center;
+}
