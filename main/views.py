@@ -10,4 +10,5 @@ def teenager(request):
 
 def adult(request):
     return render(request, 'main/adult.html')
+
 # Create your views here.

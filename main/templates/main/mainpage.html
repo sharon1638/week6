@@ -1,26 +1,16 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'css/css.css' %}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@700&amp;family=Darker+Grotesque:wght@500&amp;display=swap" rel="stylesheet">
-    <meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@700&amp;family=Darker+Grotesque:wght@500&amp;display=swap" rel="stylesheet">
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
     <title>About "시윤"</title>
-</head>
 <body>
     <header>
         <h1>About Me</h1>
     </header>
-    <nav>    
-        <a href="{% url 'childhood' %}" target="_blank">Childhood</a>
-        <a href="{% url 'teenager' %}" target="_blank">Teens</a>
-        <a href="{% url 'adult' %}" target="_blank">20s</a>
-    </nav>
     
     <br>
 <div class="mypic">
-    <!--img src="0.JPG" width="400" height="400"--> 
     <img src="{%static 'images/0.JPG' %}" height="400">
     </div> <br>
     
@@ -33,7 +23,6 @@
         <strong>HOBBY:</strong>운동<br><br>
         <strong>INSTAGRAM:</strong>
         <a href="https://www.instagram.com/k_siy2on/" target="_blank">
-            <!--img src="instagramlogo.png" height="50" width="50"--> 
             <img src="{%static 'images/instagramlogo.png'%}" height="50" width="50"></a>
         <h6>(위의 이미지를 누르면 인스타그램 링크로 연결됩니다.)</h6>
             </article>
@@ -46,11 +35,8 @@
             <h3 id="musiclover"># MUSICLOVER</h3>
         </div>
         <div class="image">
-            <!--img src="sportslover.jpg" width="250" height="300"-->
             <img src="{%static 'images/sportslover.JPG'%}" height="300" width="250">
-            <!--img src="travelover.jpg" width="250" height="300"-->
             <img src="{%static 'images/travelover.jpg'%}" height="300" width="250">
-            <!--img src="musiclover.jpg" width="250" height="300"-->
             <img src="{%static 'images/musiclover.jpg'%}" height="300" width="250">
         </div>
 
@@ -63,8 +49,6 @@
             </p>
         </div>
     </div>
-
-
 
 <footer>
     <div>
@@ -79,4 +63,5 @@
     </ul>
     </div>
 </footer>
-</body></html>
+</body>
+{% endblock %}
