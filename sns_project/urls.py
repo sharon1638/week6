@@ -23,4 +23,7 @@ urlpatterns = [
     path('adult/',views.adult, name="adult"),
     path('teenager/',views.teenager, name="teenager"),
     path('childhood/',views.childhood, name="childhood"),
+    path('<int:id>/',views.detail, name="detail"),
+    path('new/',views.new, name="new"),
+    path('create/',views.create, name="create"),
 ]
