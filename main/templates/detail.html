@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset ="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail</title>
-    <style>
-        body{text-align: center;}
-    </style>
-</head>
-<body>
-    <h1>{{post.title}}</h1>
-     작성자:{{post.writer}}
-     <br>
-     날짜:{{post.pub_date}}
-     <br>
-     <p>{{post.body}}</p>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block content %}
+
+<h1>{{post.title}}</h1>
+작성자 : {{post.writer}}
+날짜 : {{post.pub_date}}
+<hr>
+<p>{{post.body}}</p>
+
+{% endblock %}
