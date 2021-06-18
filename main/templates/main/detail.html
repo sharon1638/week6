@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{post.title}}</h1>
+작성자 : {{post.writer}}
+<br>
+날짜 : {{post.pub_date}}
+<hr>
+사진 : {% if post.image %}
+    <p><img src="{{post.image.url}}" alt="사진"></p>
+{% endif %}
+<p>{{post.body}}</p>
+<a href="{%url 'main:edit' post.id%}">수정하기</a>
+<a href="{%url 'main:delete' post.id%}">삭제하기</a>
+{% endblock %}

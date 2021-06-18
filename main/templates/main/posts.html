@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+{%if user.is_authenticated%}
+    <h1 class="nav-link"> 글 목록 </h1> <br>
+<div>  
+    {% for post in posts %}
+    <div>
+        <h4><strong>{{post.title}}</h4></strong>
+        <a><h6>작성자:{{post.writer}}</h6></a><br>
+                    {{post.summary}}
+        <a href="{%url 'main:detail' post.id %}">...more</a>
+        <br>
+        <hr>
+    </div>
+    {%endfor%}
+</div>
+
+{%else%}
+    <h3>로그인 후 이용가능</h3>
+    <a href="{% url 'account_login'%}" class="btn btn-warning">로그인</a>
+    <a href="{% url 'account_signup'%}" class="btn btn-warning">회원가입</a>
+{%endif%}
+{% endblock %}
