@@ -25,6 +25,18 @@
 <a href="{%url 'main:delete' post.id%}">삭제하기</a>
 
 <div>
+    {% for comment in comments %}
+    <div>
+        작성자 : {{comment.writer}}<br>
+        {{comment.content}}
+        <br><hr>
+        <a href="{%url 'main:edit_comment' post.id%}">수정하기</a>
+        <a href="{%url 'main:delete_comment' post.id%}">삭제하기</a>
+    </div>
+    {%endfor%}
+</div>
+
+<div>
     <form action="{%url 'main:create_comment' post.id%}" method="POST">
     {%csrf_token%}
     <textarea name="content" placeholder="댓글 내용 입력"></textarea>

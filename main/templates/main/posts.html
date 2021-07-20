@@ -8,8 +8,16 @@
     {% for post in posts %}
     <div>
         <h4><strong>{{post.title}}</h4></strong>
-        <a><h6>작성자:{{post.writer}}</h6></a><br>
-                    {{post.summary}}
+        {% if post.writer %}
+            {% comment %} {% if 'user' in post.writer.username and post.writer.username != 'user' %}
+                작성자 : <a href="{% url 'users:mypage' post.writer.id %}">{{ post.writer.last_name }} {{ post.writer.first_name }}</a>
+            {% else %} {% endcomment %}
+                작성자 : <a href="{% url 'users:mypage' post.writer.id %}">{{ post.writer }}</a>
+            {% comment %} {% endif %}
+        {% else %}
+            작성자 : 알 수 없음 {% endcomment %}
+        {% endif %}
+            {{post.summary}}
         <a href="{%url 'main:detail' post.id %}">...more</a>
         <br>
         <hr>
