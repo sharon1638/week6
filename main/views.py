@@ -30,7 +30,7 @@ def new(request):
 def create(request):              #데이터 베이스에 데이터를 저장하는 create 함수
     new_post = Post()
     new_post.title = request.POST['title']
-    new_post.writer = request.user
+    new_post.writer = request.POST['writer']
     new_post.pub_date = timezone.now()
     new_post.image= request.FILES.get('image')
     new_post.body = request.POST['body']
@@ -65,5 +65,21 @@ def create_comment(request, post_id):
         Comment.objects.create(content=comment_content, writer=current_user, post=post)
     return redirect('main:detail', post_id)
 
+<<<<<<< HEAD
 
     
+=======
+def edit_comment(request, post_id):
+    comment_edit = Comment.objects.get(post_id=post_id)
+    return render(request, 'main/edit_comment.html',{'post': comment_edit})
+
+def update_comment(request, post_id):
+    comment_update = Comment.objects.get(post_id=post_id)
+    comment_update.save()
+    return redirect('main:detail',comment_update.id)
+
+def delete_comment(request, post_id):
+    comment_delete = Comment.objects.filter(post_id=post_id)
+    comment_delete.delete()
+    return redirect('main:detail', post_id)
+>>>>>>> 424207dad2b0332491a9bc6e60031c1c781444b9

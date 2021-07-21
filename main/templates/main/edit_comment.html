@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+
+<h1 class="nav-link">댓글 수정하기</h1>
+<form action="{% url 'main:update_comment' post.id%}" method="POST">
+    {%csrf_token%}
+    <textarea name="content" placeholder="댓글 내용 입력" value = "{{comment.content}}"></textarea>
+    <button type="submit">수정</button>
+</form>
+{% endblock %}
