@@ -65,6 +65,8 @@ def create_comment(request, post_id):
         Comment.objects.create(content=comment_content, writer=current_user, post=post)
     return redirect('main:detail', post_id)
 
+
+
 def edit_comment(request, post_id):
     comment_edit = Comment.objects.get(post_id=post_id)
     return render(request, 'main/edit_comment.html',{'post': comment_edit})
