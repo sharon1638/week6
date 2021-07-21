@@ -65,10 +65,8 @@ def create_comment(request, post_id):
         Comment.objects.create(content=comment_content, writer=current_user, post=post)
     return redirect('main:detail', post_id)
 
-<<<<<<< HEAD
 
-    
-=======
+
 def edit_comment(request, post_id):
     comment_edit = Comment.objects.get(post_id=post_id)
     return render(request, 'main/edit_comment.html',{'post': comment_edit})
@@ -82,4 +80,3 @@ def delete_comment(request, post_id):
     comment_delete = Comment.objects.filter(post_id=post_id)
     comment_delete.delete()
     return redirect('main:detail', post_id)
->>>>>>> 424207dad2b0332491a9bc6e60031c1c781444b9
